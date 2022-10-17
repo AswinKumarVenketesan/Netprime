@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Tahoma, Serif;
+  background-color: #1e1c1c;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #3b9ae1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  padding-left: 1rem;
+}
+
+li > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+li>button:hover{
+  color:rgb(224, 30, 20)
+}
+
+nav > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: larger;
+}
+nav > button:hover {
+  color: rgb(224, 30, 20);
+}
+
+.container {
+  background-color: #298cd3;
+  margin: 30px auto;
+  padding: 4rem 1rem;
+  max-width: 60rem;
+  width: 30%;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 5%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > input {
+  margin: 2%;
+  padding: 2%;
+  background-color: #c1efff;
+}
+
+input[type="text"] {
+  background-color: #c1efff;
+}
+
+.container > h1 {
+  margin-top: -40px;
+  padding-bottom: 5%;
+}
+
+.submit-btn {
+  background-color: #0078aa;
+  border: transparent;
+  margin-top: 8%;
+  cursor: pointer;
+  color :white;
+}
+.submit-btn:hover{
+  background-color:rgb(207, 34, 34) ;
+}
+
+.movie-card-container{
+  margin: 7% 5% 5% 5%;
+  overflow: auto;
+  white-space: nowrap;
+  color: white;
+}
+.movie-card{
+  position: relative;
+  display: inline-block;
+  font-size: large;
+  width: 20%;
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 20px;
+  transition: 200ms ease-in-out;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.movie-card:hover .movie-details {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.movie-image>img{
+  width: 100%;
+  object-fit: cover;
+}
+.movie-details{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #101313;
+  opacity: 0.9;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.movie{
+  color: rgb(250, 249, 248);
+  font-size: 20px;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.movie > button:hover{
+  color: rgb(224, 30, 20);
+}
+
+.search-bar>button {
+  background-color: #00D7FF;
+  border: 0;
+  cursor: pointer;
+  padding: 7px;
+}
+.search-bar>button:hover{
+background-color: rgb(224, 30, 20);
+}
+.search-bar > input {
+  margin: 2%;
+  padding: 2%;
+  background-color: #c1efff;
+}
+.search-bar-container{
+  width: 20%;
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  color: white;
+  text-align: center;
+}
+
+.search-bar-container>h4{
+  margin-top: 30px;
+}
+
+.loading{
+  margin-top: 5%;
+  text-align: center;
+}
+
