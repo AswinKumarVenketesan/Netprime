@@ -15,15 +15,12 @@ const userModel = sequelize.define(
     },
     username: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
     email: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
     isLoggedIn: {
       type: Sequelize.BOOLEAN,

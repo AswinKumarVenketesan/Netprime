@@ -10,7 +10,6 @@ const Session = sequelize.define("session", {
   },
   status: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
 });
 

@@ -11,10 +11,10 @@ const {UserFindOne,UserCreate} = require('../utils/dbquery')
 const registerUser = async (req, reply) => {
   try {
     const {username,email,password} = req.payload
-    let user = await UserFindOne({
+    const user = await UserFindOne({
       where: {email},
     });
-    if (user) return reply({ message: "User already registered" });
+    if (!user) return reply({ message: "User already registered" });
     bcrypt.hash(password, 10, async(err, hash) => {
     await UserCreate({
         username: username,
@@ -33,7 +33,7 @@ const registerUser = async (req, reply) => {
 
 const loginUser = async (req, reply) => {
   try {
-    let user = await UserFindOne({
+    const user = await UserFindOne({
       where: {username:req.payload.username},
     });
     if (!user) {
@@ -45,7 +45,7 @@ const loginUser = async (req, reply) => {
       user.addSession(session);
       req.cookieAuth.set({ sId: session.id, userId: user.id });
       logger.log("info","Login Successfull")
-      reply({ message: "Login Successfull", data : user }).state(username, { firstVisit: false });
+      reply({ message: "Login Successfull", data : user });
     }
   } catch (error) {
     return reply({ message: error.message });
